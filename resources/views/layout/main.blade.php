@@ -32,130 +32,73 @@
   </head>
   <body>
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light dropdown" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false" >
-  <ul class="navbar-nav dropdown">
-    <div class="container"> 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
-          <a class="nav-link" href="{{ url('/about') }}">About</a>
-          <a class="nav-link" href="{{ url('/data') }}">Data</a>
-          <a class="nav-link" href="{{ url('/datas') }}">Alt. Data</a>
-        </div>
-      </div>
-    </div>
-    <div id="app">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
-          <!-- Authentication Links -->
-                        @guest
-                        @if (Route::has('login'))
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif
-                        
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                          </a>
-                          
-                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                      </a>
-                                      
-                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                      </form>
-                                    </div>
-                                  </li>
-                                  @endguest
-                                </ul>
-                              </div>
-                            </div>
-                          </nav>
-                          
-                          <main class="py-4">
-                            @yield('content')
-                          </main>
-                        </div> 
-                      </ul>
-                      </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/data">Data</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/datas">Alt. Data</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Authentication Links -->
+                    @guest
+                    @if (Route::has('login'))
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @endif
+                    
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="nav-item dropdown">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                      </a>
                       
-                      <aside class="main-sidebar sidebar-light-teal elevation-4">
-                        <!-- Brand Logo -->
-                        <a href="/" class="brand-link">
-                          <img src="dist/img/laravel-512.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                          <span class="brand-text font-weight-light">Laravel</span>
-                        </a>
-                        
-                        <!-- Sidebar -->
-                        <div class="sidebar">
-                          <!-- SidebarSearch Form -->
-                          <div class="form-inline mt-2">
-                            <div class="input-group" data-widget="sidebar-search">
-                              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                              <div class="input-group-append">
-                                <button class="btn btn-sidebar">
-                                  <i class="fas fa-search fa-fw"></i>
-                                </button>
-          </div>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                  </a>
+                                  
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                          @csrf
+                        </form>
+                      </div>
+                    </li>
+                    @endguest
+                  </ul>
+                </div>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
       </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
-
-  
-
+    </nav>
 
   @yield('container')
 
