@@ -17,7 +17,7 @@ class DataController extends Controller
     {
         // $data = DB::table('datas')->get();
         $data = Data::All();
-        return view('data/index', compact('datas'));
+        return view('data/index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class DataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(datas $datas)
+    public function create(data $data)
     {
         return view('data/create');
     }
@@ -44,9 +44,9 @@ class DataController extends Controller
             'telp' => 'required',
         ]);
 
-        datas::create($request->All());
+        data::create($request->All());
 
-        return redirect('/data'->with('status', 'Data Created!');
+        return redirect('/data')->with('status', 'Data Created!');
     }
 
     /**
@@ -68,7 +68,7 @@ class DataController extends Controller
      */
     public function edit(data $data)
     {
-        retun view('data/edit', compact('data'));
+        return view('data/edit', compact('data'));
     }
 
     /**

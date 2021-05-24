@@ -21,15 +21,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pegawai as $dt)
+                            @foreach ($data as $dt)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                     <td>{{ $dt->nama }}</td>
                                     <td>{{ $dt->alamat }}</td>
                                     <td>{{ $dt->telp }}</td>
                                     <td>
-                                    <a href="" class="badge bg-success">edit</a>
-                                    <a href="" class="badge bg-danger">delete</a>
+                                    <a href="{{ $dt->id }}/edit" class="btn btn-success">edit</a>
+                                    <form action="{{ $dt->id}}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
                                     </td>
                             </tr>
                             @endforeach
