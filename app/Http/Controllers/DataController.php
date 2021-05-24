@@ -80,7 +80,7 @@ class DataController extends Controller
      */
     public function update(Request $request, data $data)
     {
-        data::where('ID', $data->ID)
+        data::where('id', $data->ID)
                     ->update([
                         'nama' => $request->nama,
                         'alamat' => $request->alamat,
