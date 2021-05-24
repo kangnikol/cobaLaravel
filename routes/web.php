@@ -24,4 +24,7 @@ Route::post('/datas', 'DatasController@store');
 Route::delete('/datas/{datas}', 'DatasController@destroy');
 Route::get('/datas/{datas}/edit', 'DatasController@edit');
 Route::patch('/datas/{datas}', 'DatasController@update');
+Route::delete('/data/{data}', 'DataController@destroy');
+Route::get('/data/{data}/edit', 'DataController@edit');
+Route::patch('/data/{data}', 'DataController@update');
 Auth::routes();
