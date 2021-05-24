@@ -14,12 +14,11 @@
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
+                </div>
             </div>
-        </div>
-@endif   
+                    @endif   
                     <ul class="list-group">
-                        @foreach ($datas as $datas)
-                            
+                        @foreach ($datas as $datas)        
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $datas->nama }}
                             <a href="/datas/{{ $datas->id }}" class="badge bg-success rounded-pill">Detail</a>
