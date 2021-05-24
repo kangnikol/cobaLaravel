@@ -80,7 +80,7 @@ class DataController extends Controller
      */
     public function update(Request $request, data $data)
     {
-        data::where('id', $data->id)
+        data::where('ID', $data->ID)
                     ->update([
                         'nama' => $request->nama,
                         'alamat' => $request->alamat,
@@ -97,7 +97,7 @@ class DataController extends Controller
      */
     public function destroy(data $data)
     {
-        data::destroy($data->id);
+        data::destroy($data->ID);
         return redirect('/data')->with('status', 'Data deleted!');
     }
 }

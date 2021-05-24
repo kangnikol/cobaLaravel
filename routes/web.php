@@ -22,9 +22,9 @@ Route::get('/data', 'DataController@index');
 Route::get('/data/create', 'DataController@create');
 Route::get('/data/{data}', 'DataController@show');
 Route::post('/data', 'DataController@store');
-Route::delete('/data/{dt}', 'DataController@destroy');
-Route::get('/data/{dt}/edit', 'DataController@edit');
-Route::patch('/data/{dt}', 'DataController@update');
+Route::delete('/data/{data}', 'DataController@destroy');
+Route::get('/data/{data}/edit', 'DataController@edit');
+Route::patch('/data/{data}', 'DataController@update');
 
 Route::get('/datas', 'DatasController@index');
 Route::get('/datas/create', 'DatasController@create');

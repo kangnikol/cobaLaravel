@@ -10,7 +10,7 @@
             <div class="col-3">
                 <div class="mt-3">
                     <h1>Alternative data</h1> 
-                    <form method="POST" action="/datas">
+                    <form method="POST" action="/data">
                         @csrf
                         <div class="form-group my-3">
                           <label for="nama">Nama</label>
