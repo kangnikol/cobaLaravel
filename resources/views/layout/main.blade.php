@@ -103,7 +103,7 @@
   @yield('container')
 
 
-  <footer class="main-footer navbar fixed-bottom">
+  <footer class="footer navbar fixed-bottom">
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>

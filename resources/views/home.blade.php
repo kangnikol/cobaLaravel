@@ -3,7 +3,7 @@
 @section('content')
 @section('container')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-md-8 mt-3">
             Hello, World
                 </div>
