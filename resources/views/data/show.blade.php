@@ -12,11 +12,11 @@
                     <h1>Detailed data</h1>
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $data ->nama}}</h5>
-                            <h6 class="card-subtitle text-muted">{{ $data->telp }}</h6>
+                            <h5 class="card-title">{{ $data ->nama}}</h5><br>
+                            <h6 class="card-title text-muted">{{ $data->telp }}</h6>
                             <p class="card-text">{{ $data->alamat}}</p>
-                            <a href="{{$data->ID}}/edit" class="btn btn-success">Edit</a>
-                            <form action="{{ $data->ID}}" method="post" class="d-inline">
+                            <a href="{{$data->id}}/edit" class="btn btn-success">Edit</a>
+                            <form action="{{ $data->id}}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                             <button type="submit" class="btn btn-danger">Delete</button>

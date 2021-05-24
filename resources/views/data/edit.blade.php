@@ -11,7 +11,7 @@
                 <div class="mt-3">
                     <h1>Ubah data</h1> 
                     <form method="POST" action="/data/{{ $data->id }}">
-                        @method('patch')
+                      @method('patch')
                         @csrf
                         <div class="form-group my-3">
                           <label for="nama">Nama</label>

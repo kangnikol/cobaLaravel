@@ -13,7 +13,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">{{ $datas ->nama}}</h5>
-                            <h6 class="card-subtitle text-muted">{{ $datas->telp }}</h6>
+                            <h6 class="card-title text-muted">{{ $datas->telp }}</h6>
                             <p class="card-text">{{ $datas->alamat}}</p>
                             <a href="{{$datas->id}}/edit" class="btn btn-success">Edit</a>
                             <form action="{{ $datas->id}}" method="post" class="d-inline">

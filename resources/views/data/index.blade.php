@@ -21,7 +21,7 @@
                         @foreach ($data as $data)        
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $data->nama }}
-                            <a href="/data/{{ $data->ID }}" class="badge bg-success rounded-pill">Detail</a>
+                            <a href="/data/{{ $data->id }}" class="badge bg-success rounded-pill">Detail</a>
                         </li>
                         @endforeach
                     </ul>

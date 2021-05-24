@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="mt-3">
-                    <h1>Alternative data</h1> 
+                    <h1>Create data</h1> 
                     <form method="POST" action="/data">
                         @csrf
                         <div class="form-group my-3">
