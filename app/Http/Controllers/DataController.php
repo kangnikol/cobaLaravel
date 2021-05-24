@@ -17,7 +17,7 @@ class DataController extends Controller
     {
         // $data = DB::table('datas')->get();
         $data = Data::All();
-        return view('data/index', ['pegawai' => $data]);
+        return view('data/index', compact('datas'));
     }
 
     /**
@@ -25,9 +25,9 @@ class DataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(datas $datas)
     {
-        //
+        return view('data/create');
     }
 
     /**
@@ -38,7 +38,15 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'telp' => 'required',
+        ]);
+
+        datas::create($request->All());
+
+        return redirect('/data'->with('status', 'Data Created!');
     }
 
     /**
@@ -47,9 +55,9 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(data $data)
     {
-        //
+        return view('data/show', compact('data'));
     }
 
     /**
@@ -58,9 +66,9 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(data $data)
     {
-        //
+        retun view('data/edit', compact('data'));
     }
 
     /**
@@ -70,9 +78,15 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, data $data)
     {
-        //
+        data::where('id', $data->id)
+                    ->update([
+                        'nama' => $request->nama,
+                        'alamat' => $request->alamat,
+                        'telp' => $request->telp
+                    ]);
+        return redirect('/data')->with('status', 'Data updated!');
     }
 
     /**
@@ -81,8 +95,9 @@ class DataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(data $data)
     {
-        //
+        data::destroy($data->id);
+        return redirect('/data')->with('status', 'Data deleted!');
     }
 }
