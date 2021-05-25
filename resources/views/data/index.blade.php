@@ -25,7 +25,7 @@
                         </li>
                     </ul>
                     @endforeach
-                    {{ $data->links() }}
+                    {{$data->links()}}
                 </div>
             </div>
         </div>
