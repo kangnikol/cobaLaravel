@@ -15,8 +15,8 @@ class DataController extends Controller
      */
     public function index()
     {
-        // $data = DB::table('datas')->get();
-        $data = Data::All();
+        $data = DB::table('data')->paginate(5);
+        // $data = Data::All()->paginate(5);
         return view('data/index', compact('data'));
     }
 

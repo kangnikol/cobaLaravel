@@ -92,21 +92,17 @@
                 </div>
             </li>
           </ul>
-          <form action="search/search" class="d-flex">
+          <form action="search/result" class="d-flex">
             <input class="form-control me-2" autocomplete="off" name="search" type="text" placeholder="Search" aria-label="Search" value="{{ old('cari')}}">
             <button class="btn btn-outline-success" type="submit" value="search">Search</button>
           </form>
-          @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-          @endif
         </div>
       </div>
     </nav>
 
   @yield('container')
 
+  {{$data->links()}}
 
   <footer class="footer navbar fixed-bottom">
     <div class="float-right d-none d-sm-block">
