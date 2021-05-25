@@ -92,9 +92,9 @@
                 </div>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" autocomplete="off" name="search" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+          <form action="search/search" class="d-flex">
+            <input class="form-control me-2" autocomplete="off" name="search" type="text" placeholder="Search" aria-label="Search" value="{{ old('cari')}}">
+            <button class="btn btn-outline-success" type="submit" value="search">Search</button>
           </form>
           @if ($message = Session::get('success'))
             <div class="alert alert-success">
