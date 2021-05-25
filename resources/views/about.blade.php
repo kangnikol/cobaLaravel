@@ -11,8 +11,8 @@
       
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">{{$nama}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Trainee on PT. Senja Solusi</h6>
+          <h5 class="card-title">{{$nama}}</h5><br>
+          <h6 class="card-title text-muted">Trainee on PT. Senja Solusi</h6>
           <p class="card-text">Work here I'm realise that programming is pretty hard and fun!</p>
         </div>
       </div>  
