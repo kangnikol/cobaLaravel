@@ -34,6 +34,7 @@ Route::delete('/datas/{datas}', 'DatasController@destroy');
 Route::get('/datas/{datas}/edit', 'DatasController@edit');
 Route::patch('/datas/{datas}', 'DatasController@update');
 
-Route::get('/search','SearchController@index');
-Route::get('/search/result','SearchController@search');
+Route::get('/search', [PostController::class, 'search']);
+Route::get('/users', [UserController::class, 'index']);
+
 Auth::routes();
