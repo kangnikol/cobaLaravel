@@ -93,8 +93,8 @@
             </li>
           </ul>
           <form action="/data" method="GET" role="search" class="d-flex">
-            {{csrf_field()}}
-            <input class="form-control me-2" autocomplete="off" name="q" type="text" placeholder="Search" aria-label="Search" value="{{ old('search')}}">
+            {{-- {{csrf_field()}} --}}
+            <input class="form-control me-2" autocomplete="off" name="search" type="text" placeholder="Search" aria-label="Search" value="{{ old('search')}}">
             <button class="btn btn-outline-success" type="submit" value="search">Search</button>
           </form>
         </div>
