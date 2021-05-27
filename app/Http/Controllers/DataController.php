@@ -18,9 +18,8 @@ class DataController extends Controller
         if($request->has('search')){
             $data = Data::where('nama', 'like', '%'.$request->search.'%')->paginate(5);
         }else{
-            // $data = DB::table('data')->paginate(5);
             $data = Data::paginate(5);
-        }
+        }// $data = Datas::where('nama', 'like', '%'.$request->search.'%')->paginate(5);
         return view('data/index', compact('data'));
     }
 

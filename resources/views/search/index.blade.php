@@ -1,6 +1,6 @@
-@extends('layout/datas')
+@extends('layout/main')
 
-@section('title', 'Alt. Data - Web Laravel')
+@section('title', 'Search Result - Web Laravel')
 
 @section('container')
  <div class="container">
@@ -8,8 +8,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="mt-3">
-                    <h1>Alternative data</h1> 
-                    <a href="/datas/create" class="btn btn-primary my-3">Tambah data</a> 
+                    <h1>Search Result</h1> 
                     @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
@@ -18,10 +17,10 @@
             </div>
                     @endif   
                     <ul class="list-group">
-                        @foreach ($datas as $datas)        
+                        @foreach (array_merge($data, $datas) as $src)        
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            {{ $datas->nama }}
-                            <a href="/datas/{{ $datas->id }}" class="badge bg-success rounded-pill">Detail</a>
+                            {{ $src->nama }}
+                            <a href="/datas/{{ $src->id }}" class="badge bg-success rounded-pill">Detail</a>
                         </li>
                         @endforeach
                     </ul>

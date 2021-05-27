@@ -13,9 +13,15 @@ class DatasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(request $request)
     {
-        $datas = Datas::All();
+        if($request->has('search')){
+            $datas = Datas::where('nama', 'like', '%'.$request->search.'%')->paginate(5);
+        }
+        else{
+            // $data = DB::table('data')->paginate(5);
+            $datas = Datas::paginate(5);
+        }
         return view('datas/index', compact('datas'));
     }
 
