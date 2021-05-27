@@ -9,7 +9,7 @@ class PostController extends Controller
     public function search(Request $request)
     {
         //get the general information about the website
-        $website = General::query()->firstOrFail();
+        $website = ::query()->firstOrFail();
 
         $key = trim($request->get('q'));
 

@@ -13,9 +13,13 @@ class DataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(request $request)
     {
-        $data = DB::table('data')->paginate(5);
+        if($request->has('search')){
+            $data = Data::where('nama', 'like', '%'.$request->search.'%')->get();
+        }else{
+            $data = DB::table('data')->paginate(5);
+        }
         // $data = Data::All()->paginate(5);
         return view('data/index', compact('data'));
     }

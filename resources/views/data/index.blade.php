@@ -27,8 +27,8 @@
                     @endforeach
                 </div>
             </div>
-        </div>
-        {{$data->links()}}
+        </div><br>
+        {{-- {{$data->links()}} --}}
     </div>
 </div>
 
