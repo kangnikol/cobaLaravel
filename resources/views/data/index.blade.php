@@ -18,7 +18,7 @@
             </div>
                     @endif   
                     <ul class="list-group">
-                        @foreach ($datA as $dt)        
+                        @foreach ($data as $dt)        
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $dt->nama }}
                             <a href="/data/{{ $dt->id }}" class="badge bg-success rounded-pill">Detail</a>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div><br>
-        {{$datA->links()}}
+        {{$data->links()}}
     </div>
 </div>
 
