@@ -1,5 +1,5 @@
 @extends('layout/main')
-@section('title', 'Login - Web Laravel')
+@section('title', 'Home - Web Laravel')
 @section('content')
 @section('container')
 <div class="container">
